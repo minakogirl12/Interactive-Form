@@ -209,7 +209,7 @@ submitButton.addEventListener('click', (event)=>{
     if(isValid()){
         //if informaiton is valid notify users the form is valid for submission
         alert("The form is complete and can be submitted!");
-        //document.querySelector('form').submit();
+        document.querySelector('form').submit();
     }
     //tell user to check form for errors
     else{
