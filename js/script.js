@@ -34,8 +34,7 @@ const userShirtColor = document.getElementById('color'); //drop-down for colors
 userShirtColor.style.display = "none";
 let error = document.createElement('p');
 error.textContent = "Please select a T-shirt theme";
-error.style.color = 'red';
-error.style.fontWeight = 'bold';
+error.className = 'error';
 userShirtColor.parentNode.appendChild(error);
 //add the listener to the shirt drop down
 userShirtDesign.addEventListener('change', () => {
@@ -202,3 +201,18 @@ userPayment.addEventListener('change', (event) => {
 });
 
 //select submit button and add listener for it to check all fields for valid content
+const submitButton = document.querySelector('button[type=submit]');
+submitButton.addEventListener('click', (event)=>{
+    event.preventDefault(); //prevent the page from autosubmitting
+    //submit from only after all fields have been validated
+
+    if(isValid()){
+        //if informaiton is valid notify users the form is valid for submission
+        alert("The form is complete and can be submitted!");
+        //document.querySelector('form').submit();
+    }
+    //tell user to check form for errors
+    else{
+        alert("Please check form for errors")
+    }
+});
